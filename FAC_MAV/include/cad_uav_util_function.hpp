@@ -21,6 +21,7 @@
 #include <std_msgs/Float32.h>
 #include <std_msgs/Float64MultiArray.h>
 #include <std_msgs/Float64.h>
+#include <std_msgs/UInt16.h>
 
 #include <geometry_msgs/TransformStamped.h>
 #include <geometry_msgs/Transform.h>
@@ -160,16 +161,17 @@ double Force_to_PWM(double F) {
 	return pwm;
 }
 
-sensor_msgs::JointState servo_msg_create(double desired_theta1, double desired_theta2, double desired_theta3, double desired_theta4){
+sensor_msgs::JointState servo_msg_create(double desired_theta1, double desired_theta2, double desired_theta3, double desired_theta4, double switch_servo){
 	sensor_msgs::JointState servo_msg;
 
 	servo_msg.header.stamp=ros::Time::now();
 
-	servo_msg.name.resize(4);
+	servo_msg.name.resize(5);
 	servo_msg.name[0]="id_1";
 	servo_msg.name[1]="id_2";
 	servo_msg.name[2]="id_3";
 	servo_msg.name[3]="id_4";
+	servo_msg.name[4]="id_31";
 
 
 	servo_msg.position.resize(4);
@@ -177,6 +179,7 @@ sensor_msgs::JointState servo_msg_create(double desired_theta1, double desired_t
 	servo_msg.position[1]=desired_theta2;
 	servo_msg.position[2]=desired_theta3;
 	servo_msg.position[3]=desired_theta4;
+	servo_msg.position[4]=switch_servo;
 	//ROS_INFO("rr: %lf, rp: %lf",rr,rp);
 	return servo_msg;
 }

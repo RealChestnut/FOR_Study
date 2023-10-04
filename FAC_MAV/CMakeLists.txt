@@ -153,7 +153,8 @@ add_executable(FAC_MAV_ctrler src/FAC_MAV_ctrler.cpp)
 add_executable(FAC_MAV_GUI_ctrler src/FAC_MAV_GUI_ctrler.cpp)
 add_executable(FAC_MAV_DOB_ctrler src/DOB/FAC_MAV_ctrler.cpp)
 add_executable(cad_uav_main src/cad_uav_main.cpp)
-add_executable(cad_norm_version src/cad_norm_version.cpp)
+#add_executable(cad_norm_version src/cad_norm_version.cpp)
+add_executable(cad_norm_version_new src/cad_norm_version_new.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -167,7 +168,8 @@ add_dependencies(FAC_MAV_ctrler ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXP
 add_dependencies(FAC_MAV_GUI_ctrler ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(FAC_MAV_DOB_ctrler ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(cad_uav_main ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(cad_norm_version ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+#add_dependencies(cad_norm_version ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(cad_norm_version_new ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(FAC_MAV_ctrler
@@ -188,7 +190,11 @@ target_link_libraries(cad_uav_main
   ${Eigen_LIBRARIES}
 )	
 
-target_link_libraries(cad_norm_version
+#target_link_libraries(cad_norm_version
+#  ${catkin_LIBRARIES}
+#  ${Eigen_LIBRARIES}
+#)
+target_link_libraries(cad_norm_version_new
   ${catkin_LIBRARIES}
   ${Eigen_LIBRARIES}
 )

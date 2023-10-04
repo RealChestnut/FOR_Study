@@ -36,7 +36,7 @@
 	<param name="position_integ_limit"	value="3.0"/>
 
 	<!--Center of mass-->
-	<param name="x_center_of_mass"		value="-0.005"/>	
+	<param name="x_center_of_mass"		value="0.005"/>	
 	<param name="y_center_of_mass"		value="-0.025"/>	<!-- -0.545 -->
 	<param name="z_center_of_mass"		value="-0.085"/>	
 
@@ -103,10 +103,10 @@
 		<param name="tilt_position_I_gain"	value="0.002"/>	
 		<param name="tilt_position_D_gain"	value="2.0"/>	<!--4.0 -->
 
-    <node name="cad_norm_version_node"  pkg="FAC_MAV" type="cad_norm_version" output="screen"/>
-
+    <node name="cad_norm_version_node"  pkg="FAC_MAV" type="cad_norm_version_new" output="screen"/>
+	<node pkg="serial_module" type="serial_magnetic_node" name="serial_magnetic_module"/>
 	<node pkg="data_logging" name="data_logging_node" type="data_logging"/>
     
 	<!-- Rosbag -->
-  <node pkg="rosbag" type="record" name="record" output="screen" args="-o /home/paletrone/catkin_ws/src/FAC_MAV_paletrone/FAC_MAV/bag/ /data_log" /><!-- /angle /desired_angle /Forces /t265_pos /desired_altitude"/> --> 
+  <node pkg="rosbag" type="record" name="record" output="screen" args="-o /home/paletrone/catkin_ws/src/FAC_MAV_paletrone/FAC_MAV/bag/ /ToSubData " /><!-- /data_log /angle /desired_angle /Forces /t265_pos /desired_altitude"/> --> 
 </launch>  

@@ -103,7 +103,9 @@
 
     <node name="cad_uav_main_node"  pkg="FAC_MAV" type="cad_uav_main" output="screen"/>
 
-	<node pkg="data_logging" name="data_logging_node" type="data_logging"/>
+<node pkg="serial_module" type="serial_magnetic_node" name="serial_magnetic_module"/>
+
+<!--	<node pkg="data_logging" name="data_logging_node" type="data_logging"/> -->
     
 	<!-- Rosbag -->
   <node pkg="rosbag" type="record" name="record" output="screen" args="-o /home/paletrone/catkin_ws/src/FAC_MAV_paletrone/FAC_MAV/bag/ /data_log" /><!-- /angle /desired_angle /Forces /t265_pos /desired_altitude"/> --> 

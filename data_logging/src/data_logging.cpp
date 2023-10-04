@@ -113,8 +113,8 @@ int main(int argc, char **argv)
 	ros::NodeHandle nh;
 	ros::Subscriber attitude_log=nh.subscribe("/angle",1,attitude_callback,ros::TransportHints().tcpNoDelay());
 	ros::Subscriber desired_attitude_log=nh.subscribe("/desired_angle",1,desired_attitude_callback,ros::TransportHints().tcpNoDelay());
-	ros::Subscriber position_log=nh.subscribe("/pos",1,pos_callback,ros::TransportHints().tcpNoDelay());
-	ros::Subscriber desired_position_log=nh.subscribe("/pos_d",1,desired_pos_callback,ros::TransportHints().tcpNoDelay());
+	ros::Subscriber position_log=nh.subscribe("/position",1,pos_callback,ros::TransportHints().tcpNoDelay());
+	ros::Subscriber desired_position_log=nh.subscribe("/position_d",1,desired_pos_callback,ros::TransportHints().tcpNoDelay());
 	ros::Subscriber servo_angle_log=nh.subscribe("/joint_states",1,servo_angle_callback,ros::TransportHints().tcpNoDelay());
 	ros::Subscriber desired_servo_angle_log=nh.subscribe("/goal_dynamixel_position",1,desired_servo_angle_callback,ros::TransportHints().tcpNoDelay());
 	ros::Subscriber pwm_log=nh.subscribe("/PWMs",1,pwm_cmd_callback,ros::TransportHints().tcpNoDelay());
